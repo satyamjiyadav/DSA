@@ -7,7 +7,9 @@ int sumNumber(int n)
     {
         return 0;
     }
-    return n + sumNumber(n - 1);
+    else{
+        return n + sumNumber(n - 1);
+    }
 }
 
 int main(){
