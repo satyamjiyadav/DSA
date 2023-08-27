@@ -25,7 +25,6 @@ curr->next = prev;
 prev = curr;
 curr = forword;
 }
-
 head = prev;
 }
 
