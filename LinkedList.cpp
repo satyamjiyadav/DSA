@@ -10,22 +10,25 @@ class node{
         data=val;
         next=NULL;
     }
-
 };
+void insertathead(node* &head, int val){
+    node* n=new node(val);
+    n->next=head;
+    head=n;
+}
 
 void insertattail(node* &head, int val){
     node* n=new node(val);
+    node* temp=head;
     if(head==NULL){
         head=n;
         return;
     }
 
-    node* temp=head;
     while(temp->next!=NULL){
         temp=temp->next;
     }
     temp->next=n;
-
 }
 
 void display(node* head){
@@ -37,6 +40,16 @@ void display(node* head){
     cout<<"NULL";
     cout<<endl;
 }
+bool search(node* head, int key){
+    node* temp=head;
+    while(temp->data==key){
+        if(temp->data==key){
+            return true;
+        }
+        temp=temp->next;
+    }
+    return false;
+}
 
 int main(){
     node* head=NULL;
@@ -44,6 +57,9 @@ int main(){
     insertattail(head,2);
     insertattail(head,3);
     insertattail(head,4);
+    insertathead(head,5);
     display(head);
+    cout<<search(head,5)<<endl;
+
 
 }
