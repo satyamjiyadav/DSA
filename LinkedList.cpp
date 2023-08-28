@@ -60,6 +60,4 @@ int main(){
     insertathead(head,5);
     display(head);
     cout<<search(head,5)<<endl;
-
-
 }
