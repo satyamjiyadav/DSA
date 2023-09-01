@@ -25,3 +25,26 @@ public:
         return head;
     }
 };
+
+
+// Optimise method 
+        if(head==NULL || head->next==NULL){
+            return head;
+        }
+        ListNode* t1=head;
+        ListNode* t2=head->next;
+
+        while(t2!=NULL){
+            ListNode* temp=t2;
+            if(t1->val==t2->val){
+                t2=t2->next;
+                delete temp;
+            }
+            else{
+                t1->next=t2;
+                t1=t1->next;
+                t2=t2->next;
+            }
+        }
+        t1->next=NULL;
+        return head;
