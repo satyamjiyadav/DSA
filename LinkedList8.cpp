@@ -21,3 +21,44 @@ public:
         return a;   
     }
 };
+
+
+METHOD2:
+class Solution {
+public:
+        int length(ListNode * head){
+            int len=0;
+            while(head!=NULL){
+                len++;
+                head=head->next;
+            }
+            return len;
+        }  
+
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+        int lenA=length(headA);
+        int lenB=length(headB);
+
+        int skip=abs(lenA-lenB);
+
+        if(lenA>lenB){
+            while(skip>0){
+                headA=headA->next;
+                skip--;
+            }
+        }
+        else{
+            while(skip>0){
+                headB=headB->next;
+                skip--;
+            }
+        }
+
+        while(headA!=headB){
+            headA=headA->next;
+            headB=headB->next;
+        }
+
+        return headA;
+    }
+};
