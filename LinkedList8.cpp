@@ -5,6 +5,7 @@ Example 1:
 Input:listA = [4,1,8,4,5], listB = [5,6,1,8,4,5]
 Output: Intersected at '8'
 
+
 class Solution {
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
