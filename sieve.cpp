@@ -1,3 +1,4 @@
+// memory efficient approach
 #include<bits/stdc++.h>
 using namespace std;
 
